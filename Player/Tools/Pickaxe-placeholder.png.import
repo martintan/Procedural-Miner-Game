@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pickaxe-placeholder.png-9022b3c60571f3e6e8604d684a9a8a9a.stex"
+path="res://.import/Pickaxe-placeholder.png-aee4e273d82e0372848a37397a84d74b.stex"
 
 [deps]
 
-source_file="res://Player/Tools/Pickaxe-placeholder.png"
-dest_files=[ "res://.import/Pickaxe-placeholder.png-9022b3c60571f3e6e8604d684a9a8a9a.stex" ]
+source_file="res://player/tools/Pickaxe-placeholder.png"
+dest_files=[ "res://.import/Pickaxe-placeholder.png-aee4e273d82e0372848a37397a84d74b.stex" ]
 
 [params]
 

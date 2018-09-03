@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TileSpawn.png-36744cd20814ce85187ccb4f3914fa35.stex"
+path="res://.import/TileSpawn.png-bd990f844dc72fac36db131308a5ecc9.stex"
 
 [deps]
 
-source_file="res://TileMap/TileSpawn.png"
-dest_files=[ "res://.import/TileSpawn.png-36744cd20814ce85187ccb4f3914fa35.stex" ]
+source_file="res://tilemap/TileSpawn.png"
+dest_files=[ "res://.import/TileSpawn.png-bd990f844dc72fac36db131308a5ecc9.stex" ]
 
 [params]
 

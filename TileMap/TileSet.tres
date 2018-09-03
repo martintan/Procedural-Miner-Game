@@ -1,9 +1,11 @@
 [gd_resource type="TileSet" load_steps=8 format=2]
 
-[ext_resource path="res://Tiles/dirt tile - 100x100.png" type="Texture" id=1]
-[ext_resource path="res://Tiles/Stone.png" type="Texture" id=2]
-[ext_resource path="res://Tiles/grass tile - 100x100.png" type="Texture" id=3]
-[ext_resource path="res://Tiles/Dirt.png" type="Texture" id=4]
+[ext_resource path="res://tiles/dirt tile - 100x100.png" type="Texture" id=1]
+[ext_resource path="res://tiles/Stone.png" type="Texture" id=2]
+[ext_resource path="res://tiles/grass tile - 100x100.png" type="Texture" id=3]
+[ext_resource path="res://tiles/Dirt.png" type="Texture" id=4]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

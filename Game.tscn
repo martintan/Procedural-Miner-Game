@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://TileMap/TileSet.tres" type="TileSet" id=1]
-[ext_resource path="res://TileMap/BackgroundTM.gd" type="Script" id=2]
-[ext_resource path="res://TileMap/TileSpawn.png" type="Texture" id=3]
-[ext_resource path="res://TileMap/LevelTM.gd" type="Script" id=4]
-[ext_resource path="res://Tiles/grass leaves - 100x100.png" type="Texture" id=5]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Background/tilesetOpenGameBackground.png" type="Texture" id=7]
+[ext_resource path="res://tilemap/TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://tilemap/BackgroundTM.gd" type="Script" id=2]
+[ext_resource path="res://tilemap/TileSpawn.png" type="Texture" id=3]
+[ext_resource path="res://tilemap/LevelTM.gd" type="Script" id=4]
+[ext_resource path="res://tiles/grass leaves - 100x100.png" type="Texture" id=5]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://debug/PlayerPosition.gd" type="Script" id=7]
+[ext_resource path="res://background/tilesetOpenGameBackground.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -31,7 +32,7 @@ tracks/0/keys = {
 
 [node name="TileMaps" type="Node" parent="." index="0"]
 
-[node name="BackgroundTM" type="TileMap" parent="TileMaps" index="0"]
+[node name="BgTM" type="TileMap" parent="TileMaps" index="0"]
 
 mode = 0
 tile_set = ExtResource( 1 )
@@ -51,9 +52,9 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Cell", "Collision" ]
+_sections_unfolded = [ "Cell", "Collision", "Transform" ]
 
-[node name="TileSpawn" type="Sprite" parent="TileMaps/BackgroundTM" index="0"]
+[node name="TileSpawn" type="Sprite" parent="TileMaps/BgTM" index="0"]
 
 visible = false
 position = Vector2( 450, 350 )
@@ -81,16 +82,15 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 196596, 4, 0, 196597, 4, 0, 196598, 4, 0, 196599, 4, 0, 196600, 4, 0, 196601, 4, 0, 196602, 4, 0, 196603, 4, 0, 196604, 4, 0, 196605, 4, 0, 196606, 4, 0, 196607, 4, 0, 131072, 4, 0, 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 131077, 4, 0, 131078, 4, 0, 131079, 4, 0, 131080, 4, 0, 131081, 4, 0, 131082, 4, 0, 131083, 4, 0, 131084, 4, 0, 131085, 4, 0, 131086, 4, 0, 131087, 4, 0, 131088, 4, 0, 131089, 4, 0, 131090, 4, 0, 131091, 4, 0 )
 script = ExtResource( 4 )
-_sections_unfolded = [ "Cell" ]
+_sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="Environment" type="Node" parent="." index="1"]
-
-editor/display_folded = true
 
 [node name="Grass" type="YSort" parent="Environment" index="0"]
 
 editor/display_folded = true
 sort_enabled = true
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="Environment/Grass" index="0"]
 
@@ -149,7 +149,7 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="Player" parent="." index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 450, 50 )
+position = Vector2( 450, -169.426 )
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Collision", "Pickable", "Transform", "collision" ]
 
@@ -180,18 +180,28 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="SkyBG" type="Sprite" parent="Player" index="5"]
+[node name="PlayerPosition" type="Node2D" parent="Player" index="5"]
 
+script = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Levels" type="Node" parent="." index="4"]
+
+[node name="Dirt" type="Node" parent="Levels" index="0"]
+
+[node name="SkyBG" type="Sprite" parent="." index="5"]
+
+editor/display_folded = true
 visible = false
-position = Vector2( 0, -62.5 )
-scale = Vector2( 6.25, 6.25 )
+position = Vector2( 450, 0 )
+scale = Vector2( 5, 5 )
 z_index = -1
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 56.8011, 0, 320, 256 )
 _sections_unfolded = [ "Animation", "Region", "Transform", "Z Index" ]
 
-[node name="Scrolling Animation" type="AnimationPlayer" parent="Player/SkyBG" index="0"]
+[node name="Scrolling Animation" type="AnimationPlayer" parent="SkyBG" index="0"]
 
 root_node = NodePath("..")
 autoplay = "Scrolling"
@@ -201,9 +211,5 @@ playback_speed = 0.1
 anims/Scrolling = SubResource( 1 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
-
-[node name="Levels" type="Node" parent="." index="4"]
-
-[node name="Dirt" type="Node" parent="Levels" index="0"]
 
 

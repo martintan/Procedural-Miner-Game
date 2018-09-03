@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tilesetOpenGameBackground.png-cb19ff5815e4d46aa65e0928917963aa.stex"
+path="res://.import/tilesetOpenGameBackground.png-29b4db24a645c29f5c4f1073696cad70.stex"
 
 [deps]
 
-source_file="res://Background/tilesetOpenGameBackground.png"
-dest_files=[ "res://.import/tilesetOpenGameBackground.png-cb19ff5815e4d46aa65e0928917963aa.stex" ]
+source_file="res://background/tilesetOpenGameBackground.png"
+dest_files=[ "res://.import/tilesetOpenGameBackground.png-29b4db24a645c29f5c4f1073696cad70.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pickaxe_swing0003.png-8e01f3adb7925b49c710debfe0ef1476.stex"
+path="res://.import/pickaxe_swing0003.png-9539714c069ecde62181084e719d4bc6.stex"
 
 [deps]
 
-source_file="res://Player/pickaxe_swing/pickaxe_swing0003.png"
-dest_files=[ "res://.import/pickaxe_swing0003.png-8e01f3adb7925b49c710debfe0ef1476.stex" ]
+source_file="res://player/pickaxe_swing/pickaxe_swing0003.png"
+dest_files=[ "res://.import/pickaxe_swing0003.png-9539714c069ecde62181084e719d4bc6.stex" ]
 
 [params]
 

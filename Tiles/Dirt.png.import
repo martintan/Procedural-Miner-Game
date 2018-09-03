@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dirt.png-fd59aa5d6d9f3704b8e2424ccf607565.stex"
+path="res://.import/Dirt.png-d8acf1eeb10229500f954f3bdcfe6f8d.stex"
 
 [deps]
 
-source_file="res://Tiles/Dirt.png"
-dest_files=[ "res://.import/Dirt.png-fd59aa5d6d9f3704b8e2424ccf607565.stex" ]
+source_file="res://tiles/Dirt.png"
+dest_files=[ "res://.import/Dirt.png-d8acf1eeb10229500f954f3bdcfe6f8d.stex" ]
 
 [params]
 

@@ -8,7 +8,7 @@ current level is like a state -> switched by level classes
 onready var node_blocks_holder = GLOBAL.root.get_node("Blocks")
 onready var block_factory = preload("res://Blocks/BlockFactory.tscn").instance()
 # Node2D that designates where the level should start generating
-onready var level_start = get_parent().get_node("BackgroundTM/TileSpawn")
+onready var level_start = get_parent().get_node("BgTM/TileSpawn")
 
 # level classes
 const DirtLevel = preload("res://TileMap/Levels/DirtLevel.gd")
@@ -28,7 +28,7 @@ var depth_checkpoint = 0
 
 func _ready():
 	randomize()
-	GLOBAL.player.connect("on_ground", self, "on_player_grounded")
+#	GLOBAL.player.connect("on_ground", self, "on_player_grounded")
 	generate_level(DirtLevel, start_pos)
 	
 func generate_level(level_class, start_pos):
@@ -38,7 +38,7 @@ func generate_level(level_class, start_pos):
 	current_level.generate_block_vein()
 	generate_structure(0, start_pos)
 	depth_checkpoint += current_level.max_height
-		
+	
 func generate_structure(STRUCTURE_TYPE, start_pos):
 	print("Player: ", world_to_map(GLOBAL.player.position), " start_pos: ", start_pos)
 	# load structure and get array of tile positions

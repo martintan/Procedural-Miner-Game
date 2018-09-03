@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dirt tile - 100x100.png-117b7155c9a5c7f7076576585a0095b6.stex"
+path="res://.import/dirt tile - 100x100.png-51457b77e9ff229ee7725daede54c29d.stex"
 
 [deps]
 
-source_file="res://Tiles/dirt tile - 100x100.png"
-dest_files=[ "res://.import/dirt tile - 100x100.png-117b7155c9a5c7f7076576585a0095b6.stex" ]
+source_file="res://tiles/dirt tile - 100x100.png"
+dest_files=[ "res://.import/dirt tile - 100x100.png-51457b77e9ff229ee7725daede54c29d.stex" ]
 
 [params]
 
