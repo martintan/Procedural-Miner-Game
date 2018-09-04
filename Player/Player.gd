@@ -12,15 +12,9 @@ func _ready():
 #	$AnimationPlayer.play("idle")
 	pass
 	
+	
 func _process(delta):
-	if Input.is_action_just_pressed("tool_1"):
-		$ToolHandler.on_primary_attack("PICKAXE")
-		
-	elif Input.is_action_just_pressed("tool_2"):
-		pass
-		
-	elif Input.is_action_just_pressed("tool_3"):
-		pass
+	pass
 		
 func _physics_process(delta):
 	velocity.y += gravity * gravity_modifier

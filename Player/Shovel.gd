@@ -1,6 +1,6 @@
 extends Node2D
 
-const breakable = [ "Stone" ]
+const breakable = [ "Dirt" ]
 var block
 
 func primary_attack(block):

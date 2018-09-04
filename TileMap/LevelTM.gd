@@ -38,25 +38,14 @@ func generate_level(level_class, start_pos):
 	current_level.generate_block_vein()
 	generate_structure(0, start_pos)
 	depth_checkpoint += current_level.max_height
+					
+func generate_structure(TYPE, start_pos):
+	var structure = load("res://tilemap/Structures.tscn").instance().get_child(TYPE).duplicate()
+	var tilemap = structure.get_node("TileMap")
+	var entrance = world_to_map(structure.get_node("Entrance").position)
+	for pos in tilemap.get_used_cells():
+		set_cell(pos.x - entrance.x + start_pos.x, pos.y + start_pos.y, tilemap.get_cellv(pos))
 	
-func generate_structure(STRUCTURE_TYPE, start_pos):
-	print("Player: ", world_to_map(GLOBAL.player.position), " start_pos: ", start_pos)
-	# load structure and get array of tile positions
-	var structure = load("res://TileMap/Structures.tscn").instance().get_child(STRUCTURE_TYPE).duplicate()
-	var cells = structure.get_used_cells()
-	# get random position in current_level - level_margin
-	var rand_pos = Vector2(round( rand_range(start_pos.x - current_level.max_width - level_margin, start_pos.x)), round( rand_range(start_pos.y, start_pos.y + current_level.max_height - level_margin)))
-	# get distance required to translate structure cells to desired pos (rand_pos)
-	var distance = Vector2(cells[0].x - rand_pos.x, cells[0].y - rand_pos.y)
-	# loop through cells & replace cells with structure's cells
-	for pos in cells:
-		var translated = pos - distance
-		set_cell(translated.x, translated.y, structure.get_cellv(pos))
-		if translated.x == start_pos.x:
-			for TILE in GLOBAL.Tiles:
-				if structure.get_cellv(pos) == GLOBAL.Tiles[TILE]:
-					set_cell(translated.x, translated.y, -1)
-				
 # update depth tracker when player falls to the ground
 func on_player_grounded():
 	player_depth += world_to_map(GLOBAL.player.ground_pos).y - player_prev_depth
